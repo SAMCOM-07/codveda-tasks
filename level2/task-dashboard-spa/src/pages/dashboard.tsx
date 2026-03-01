@@ -29,7 +29,7 @@ export default function DashboardPage() {
       </div>
 
       {/* pie chart and recent tasks */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-4 mt-12 mb-24">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-4 mt-12 pb-24">
 
         {/* pie chart */}
         <div className="w-full h-full shadow-[0px_5px_10px_2px] shadow-muted-foreground/20 rounded-lg flex flex-col items-center justify-center">
