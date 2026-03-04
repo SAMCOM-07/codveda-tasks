@@ -12,7 +12,7 @@ export default function TaskPieChart() {
   ];
 
   return (
-    <div className="w-full h-100">
+    <div className="w-full h-100 outline-none">
       {tasks.length === 0 ? (
         <div className="flex items-center justify-center h-full text-gray-500">
           No tasks to display
