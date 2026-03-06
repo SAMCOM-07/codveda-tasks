@@ -90,6 +90,7 @@ form.addEventListener("submit", (e) => {
       alertBox.style.transition = "top 0.5s ease-out";
     }, 3000);
     form.reset();
+
     errorIndicators.forEach((error) => (error.innerText = ""));
     const strengthBar = document.querySelector(".strengthBar");
     const strengthText = document.querySelector(".strengthText");
