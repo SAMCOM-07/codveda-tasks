@@ -20,7 +20,7 @@ function App() {
 
     // i don't want to use react router for this app, so i'm just updating the url with search params and using that to fetch data in the hooks so as to explore other ways
 
-    window.location.href = `${currentUrl.origin}${currentUrl.pathname}?username=${username}`;
+    window.location.href = `${currentUrl.origin}${currentUrl.pathname}${username ? `?username=${username}` : ''}`;
   };
 
   return (

@@ -13,10 +13,11 @@ const useUser = () => {
     const fetchData = async () => {
       try {
         if (!usernameFromUrl) {
+          alert("Please enter a username to search");
           return;
         }
         setLoadingUser(true);
-        
+
         const response = await fetch(`https://api.github.com/users/${usernameFromUrl}`);
         if (!response.ok) {
           throw new Error("User not found");
@@ -26,7 +27,7 @@ const useUser = () => {
       } catch (error) {
         console.error("Error fetching data:", error);
         setError("Error fetching user details or user not found");
-        alert("Error fetching user details or user not found");
+        alert("Error fetching user details or user not found\nPlease try later if error persists");
       } finally {
         setLoadingUser(false);
       }

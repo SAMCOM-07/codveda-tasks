@@ -4,13 +4,17 @@ import Navbar from "./components/Navbar";
 import HamburgerMenu from "./components/HamburgerMenu";
 import FormOverlay from "./components/FormOverlay";
 import { useTask } from "./hooks/useTask";
+import Alert from "./components/Alert";
 
 export default function AppLayout() {
 
-  const { openFormOverlay } = useTask()
+  const { openFormOverlay, alertDetails } = useTask()
 
   return (
     <div className="flex h-screen relative">
+
+      <Alert details = {alertDetails}/>
+
       {openFormOverlay && <div className="fixed inset-0 z-50">
         <FormOverlay />
       </div>}

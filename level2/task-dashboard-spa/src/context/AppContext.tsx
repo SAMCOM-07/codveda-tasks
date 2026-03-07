@@ -12,6 +12,9 @@ export const TaskProvider = ({ children }: { children: ReactNode }) => {
   const [tasks, setTasks] = useState<TaskType[]>(initialTasks)
   const [editDetails, setEditDetails] = useState<TaskType | null>(null)
 
+  const [openAlert, setOpenAlert] = useState(false);
+  const [alertDetails, setAlertDetails] = useState({ type: "", message: "" });
+
   // save tasks to localstorage
   useEffect(() => {
     const saveToLocalStorage = () => {
@@ -29,6 +32,8 @@ export const TaskProvider = ({ children }: { children: ReactNode }) => {
   // delete task handler
   const handleDelete = (taskId: number) => {
     setTasks(prevTasks => prevTasks.filter(task => task.id !== taskId));
+    setAlertDetails({ type: "success", message: "Task deleted successfully!" });
+    setOpenAlert(true);
   }
 
   // edit task handler
@@ -50,7 +55,11 @@ export const TaskProvider = ({ children }: { children: ReactNode }) => {
         handleDelete,
         handleEdit,
         editDetails,
-        setEditDetails
+        setEditDetails,
+        openAlert,
+        setOpenAlert,
+        alertDetails,
+        setAlertDetails
       }}
     >
       {children}

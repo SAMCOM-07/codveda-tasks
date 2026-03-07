@@ -23,4 +23,8 @@ export type TaskContextType = {
   handleEdit: (taskId: number) => void;
   editDetails: TaskType | null;
   setEditDetails: React.Dispatch<React.SetStateAction<TaskType | null>>;
+  openAlert: boolean;
+  setOpenAlert: React.Dispatch<React.SetStateAction<boolean>>;
+  alertDetails: { type: string; message: string };
+  setAlertDetails: React.Dispatch<React.SetStateAction<{ type: string; message: string }>>;
 }

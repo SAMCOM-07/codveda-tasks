@@ -16,13 +16,13 @@ const ProfileSkeleton = () => {
 
       {/* followers */}
       <div className='grid grid-cols-3 gap-2'>
-        {[1, 2, 3].map((_, index) => (
+        {[...Array(3)].map((_, index) => (
           <div key={index} className='bg-muted card border-background h-16 shimmer' />
         ))}
       </div>
 
       <div className="mt-3 grid grid-cols-2 lg:grid-cols-4 gap-2">
-         {[1, 2, 3, 4].map((_, index) => (
+         {[...Array(4)].map((_, index) => (
           <div key={index} className='h-10 rounded-md bg-background/50 shimmer' />
         ))}
       </div>
