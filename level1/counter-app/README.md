@@ -1,98 +1,85 @@
-# Counter App (DOM Manipulation Project)
+# Counter App
 
-A modern and interactive counter application built using **HTML, CSS, and Vanilla JavaScript**.
-
-This project demonstrates core **DOM manipulation concepts**, event handling, and dynamic UI updates.
+A clean, interactive counter application built with **HTML**, **CSS**, and **Vanilla JavaScript**. This project demonstrates core DOM manipulation concepts, event handling, and dynamic UI updates.
 
 ---
 
-## 🚀 Features
+## Features
 
-- Increment by +1
-- Decrement by -1
-- Reset counter
-- Dynamic color change (green & neutral)
-- Smooth hover animations
-
----
-
-## 🛠 Technologies Used
-
-- HTML5
-- CSS3
-- JavaScript (Vanilla JS)
+- **Increment / Decrement** — Adjust the counter by +1 or -1
+- **Reset** — Restore the counter to zero instantly
+- **Non-Negative Constraint** — The decrement button is automatically disabled at zero, preventing negative values
+- **Dynamic Color Feedback** — Counter text turns green for positive values and black at zero
+- **Button Animations** — Hover opacity transition and scale-down effect on click
 
 ---
 
-## 📂 Project Structure
+## Tech Stack
+
+- **HTML5** — Semantic markup and structure
+- **CSS3** — Flexbox layout, transitions, and responsive card design
+- **JavaScript (ES6)** — DOM selection, event listeners, and conditional styling
+
+---
+
+## Project Structure
 
 ```
 counter-app/
-│
-├── index.html
-├── styles.css
-├── script.js
+├── index.html      # App markup with counter display and control buttons
+├── styles.css      # Layout, theming, and button animations
+├── script.js       # Counter logic, event handling, and dynamic styling
 └── README.md
 ```
 
 ---
 
-## 📥 How to Clone and Run Locally
+## Getting Started
 
-### 1️⃣ Clone the repository
-
-```bash
-git clone https://github.com/SAMCOM-07/counter-app.git
-```
-
-### 2️⃣ Navigate into the project folder
+### 1. Clone the repository
 
 ```bash
-cd counter-app
+git https://github.com/SAMCOM-07/codveda-tasks.git
 ```
 
-### 3️⃣ Open in your browser
+### 2. Navigate into the project folder
 
-Simply open the `index.html` file in your browser:
+```bash
+cd level1/counter-app
+```
 
-- Double-click the file  
-OR  
-- Right-click → Open with browser  
+### 3. Open in your browser
 
-No additional dependencies required.
-
----
-
-## 💡 How It Works
-
-- JavaScript selects DOM elements using `getElementById`
-- Event listeners are attached to each button
-- The counter value updates dynamically
-- The number color changes based on positive or zero value
-- CSS handles styling, animations, and layout
+Open `index.html` directly in any modern browser — no build tools or dependencies required.
 
 ---
 
-## 🎯 Learning Objectives
+## How It Works
 
-This project demonstrates:
-
-- DOM selection and manipulation
-- Event handling
-- Updating `textContent`
-- Conditional logic
-- Dynamic styling
-- Writing clean and modular JavaScript
+1. DOM elements are selected via `getElementById`
+2. Event listeners are attached to the Increment (+), Decrement (-), and Reset buttons
+3. A shared `updateCounter()` function syncs the display after every action
+4. The counter text color updates conditionally — **green** for positive values, **black** at zero
+5. The decrement button is disabled when the count reaches zero to enforce a non-negative constraint
 
 ---
 
-## 📌 Author
+## Learning Objectives
 
-Samuel Shonde  
-Frontend Developer (Intern)
+- DOM selection and manipulation (`getElementById`, `textContent`)
+- Event handling with `addEventListener`
+- Conditional logic for dynamic styling
+- Disabling/enabling interactive elements programmatically
+- CSS transitions and transform animations
 
 ---
 
-## 📄 License
+## Author
 
-This project is open-source and available for learning and practice.
+**Samuel Shonde** — Frontend Developer (Intern)
+
+---
+
+## License
+
+This project is part of the **Codveda Internship** program and is open-source for learning and practice.

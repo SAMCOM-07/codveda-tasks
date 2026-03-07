@@ -40,7 +40,7 @@ const TasksTable = ({ filter, searchTerm }: { filter: string, searchTerm: string
         </thead>
         <tbody className="">
           {filteredTasks.length ? [...filteredTasks].reverse().map((task) => {
-            const overdue = task.dueDate < new Date() && task.status !== 'completed'
+            const overdue = new Date(task.dueDate) < new Date() && task.status !== 'completed'
             return (
               <tr key={task.id} className="border-b border-border hover:bg-accent/30 transition-colors">
                 <td className="px-6 py-4 max-w-xs min-w-xs  w-full">
@@ -61,7 +61,7 @@ const TasksTable = ({ filter, searchTerm }: { filter: string, searchTerm: string
             )
           }) : <tr>
             <td colSpan={6} className="text-center py-12 text-muted-foreground">No tasks found.</td>
-            </tr>}
+          </tr>}
         </tbody>
       </table>
     </div>
