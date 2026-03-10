@@ -9,6 +9,7 @@ export default function TaskPieChart() {
     { name: "In Progress", value: tasks.filter(task => task.status === 'in_progress').length || 0, fill: "#f59e0b" },
     { name: "Todo", value: tasks.filter(task => task.status === 'todo').length || 0, fill: "#3b82f6" },
     { name: "Completed", value: tasks.filter(task => task.status === 'completed').length || 0, fill: "#22c55e" },
+    { name: "Overdue", value: tasks.filter(task => new Date(task.dueDate) < new Date() && task.status !== 'completed').length || 0, fill: "#ef4444" },
   ];
 
   return (
@@ -26,8 +27,8 @@ export default function TaskPieChart() {
               nameKey="name"
               cx="50%"
               cy="50%"
-              innerRadius={85}
-              outerRadius={150}
+              innerRadius={70}
+              outerRadius={130}
               paddingAngle={3}
               stroke="none"
               label={({ percent }) => `${(percent! * 100).toFixed(0)}%`}

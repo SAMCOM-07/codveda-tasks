@@ -45,7 +45,7 @@ const TasksTable = ({ filter, searchTerm }: { filter: string, searchTerm: string
               <tr key={task.id} className="border-b border-border hover:bg-accent/30 transition-colors">
                 <td className="px-6 py-4 max-w-xs min-w-xs  w-full">
                   <span>{task.title}</span>
-                  <span className="block text-muted-foreground overflow-x-scroll mt-2">{task.description}</span>
+                  <span className="block text-muted-foreground overflow-x-scroll mt-2 text-sm">{task.description}</span>
                 </td>
                 <td className="px-6 py-4"><span className={cn('capitalize text-sm', 'px-3 py-1 rounded-full', task.status === 'completed' ? "text-green bg-green/20" : task.status === 'in_progress' ? "text-orange bg-orange/20" : "text-primary bg-primary/20")}>{task.status === 'in_progress' ? 'In Progress' : task.status}</span></td>
                 <td className="px-6 py-4"><span className={cn('capitalize text-sm', 'px-3 py-1 rounded-full', task.priority === 'high' ? "text-red-600 bg-red-400/20" : task.priority === 'medium' ? "text-orange bg-orange/20" : "text-green bg-green/20")}>{task.priority}</span></td>

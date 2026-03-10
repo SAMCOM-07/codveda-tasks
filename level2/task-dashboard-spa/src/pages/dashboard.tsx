@@ -12,7 +12,7 @@ export default function DashboardPage() {
     { title: "Total Tasks", subTitle: 'Tasks', value: tasks.length, icon: <FileCheck size={36} />, bgGradient: 'bg-gradient-to-r from-blue-600 to-blue-400' },
     { title: "Completed Tasks", subTitle: 'Completed', value: tasks.filter(task => task.status === 'completed').length, icon: <SquareCheckBig size={36} />, bgGradient: 'bg-gradient-to-r from-green-600 to-green-400' },
     { title: "In Progress", subTitle: 'Pending', value: tasks.filter(task => task.status === 'in_progress').length, icon: <RectangleEllipsis size={36} />, bgGradient: 'bg-gradient-to-r from-yellow-600 to-yellow-400' },
-    { title: "Overdue Tasks", subTitle: 'Overdue', value: tasks.filter(task => task.dueDate < new Date() && task.status !== 'completed').length || 0, icon: <OctagonAlert size={36} />, bgGradient: 'bg-gradient-to-r from-red-600 to-red-400' },
+    { title: "Overdue Tasks", subTitle: 'Overdue', value: tasks.filter(task => new Date(task.dueDate) < new Date() && task.status !== 'completed').length || 0, icon: <OctagonAlert size={36} />, bgGradient: 'bg-gradient-to-r from-red-600 to-red-400' },
   ];
 
   return (
@@ -32,12 +32,12 @@ export default function DashboardPage() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-4 mt-12 pb-24">
 
         {/* pie chart */}
-        <div className="w-full h-full shadow-[0px_5px_10px_2px] shadow-muted-foreground/20 rounded-lg flex flex-col items-center justify-center">
+        <div className="p-3 w-full h-full shadow-[0px_5px_10px_2px] shadow-muted-foreground/20 rounded-lg flex flex-col items-center justify-center">
 
           <h3 className="font-semibold text-xl p-4 border-b border-border w-full">Task Overview</h3>
           <TaskPieChart />
 
-          <div className="flex gap-6 py-4 text-sm">
+          <div className="flex gap-4 py-4 text-xs justify-evenly w-full">
             <div className="flex items-center gap-1.5">
               <span className="block w-4 h-4 rounded-sm bg-green"></span>
               <span>Completed</span>
@@ -49,6 +49,10 @@ export default function DashboardPage() {
             <div className="flex items-center gap-1.5">
               <span className="block w-4 h-4 rounded-sm bg-primary"></span>
               <span>Todo</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span className="block w-4 h-4 rounded-sm bg-destructive"></span>
+              <span>Overdue</span>
             </div>
           </div>
         </div>
@@ -71,7 +75,7 @@ export default function DashboardPage() {
                   <p className={cn("capitalize text-nowrap px-3 py-1 rounded-full", task.status === 'completed' ? 'bg-green/20 text-green' : task.status === 'in_progress' ? 'bg-orange/20 text-orange' : 'bg-primary/20 text-primary')}>{task.status === 'in_progress' ? 'In Progress' : task.status}</p>
                   <span className="text-xs text-muted-foreground text-nowrap">Due: {new Date(task.dueDate).toLocaleDateString("en-GB", {
                     day: "2-digit", month: "short", year: "numeric",
-                  })} {task.dueDate < new Date() && task.status !== 'completed' && <span className="animate-pulse ml-2 text-xs font-bold">OVERDUE</span>}</span>
+                  })} {new Date(task.dueDate) < new Date() && task.status !== 'completed' && <span className="block text-end text-destructive mt-1 animate-pulse ml-2 text-xs font-bold">OVERDUE</span>}</span>
                 </div>
               </div>
             )) : <div className="text-center py-12 text-muted-foreground">No tasks found. Create your first task!</div>}
