@@ -27,4 +27,6 @@ export type TaskContextType = {
   setOpenAlert: React.Dispatch<React.SetStateAction<boolean>>;
   alertDetails: { type: string; message: string };
   setAlertDetails: React.Dispatch<React.SetStateAction<{ type: string; message: string }>>;
+  theme: "light" | "dark";
+  setTheme: React.Dispatch<React.SetStateAction<"light" | "dark">>;
 }

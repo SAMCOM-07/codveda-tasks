@@ -15,6 +15,11 @@ export const TaskProvider = ({ children }: { children: ReactNode }) => {
   const [openAlert, setOpenAlert] = useState(false);
   const [alertDetails, setAlertDetails] = useState({ type: "", message: "" });
 
+  // Theme state
+  const [theme, setTheme] = useState<"light" | "dark">(() => {
+    return (localStorage.getItem("theme") || "light") as "light" | "dark";
+  });
+
   // save tasks to localstorage
   useEffect(() => {
     const saveToLocalStorage = () => {
@@ -28,6 +33,12 @@ export const TaskProvider = ({ children }: { children: ReactNode }) => {
     }
     saveToLocalStorage();
   }, [tasks])
+
+  // manage theme changes
+  useEffect(() => {
+    document.documentElement.className = theme;
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
   // delete task handler
   const handleDelete = (taskId: number) => {
@@ -59,7 +70,9 @@ export const TaskProvider = ({ children }: { children: ReactNode }) => {
         openAlert,
         setOpenAlert,
         alertDetails,
-        setAlertDetails
+        setAlertDetails,
+        theme,
+        setTheme
       }}
     >
       {children}

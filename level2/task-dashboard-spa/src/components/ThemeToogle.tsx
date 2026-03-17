@@ -1,16 +1,9 @@
 import { MoonIcon, SunIcon } from "lucide-react"
-import { useEffect, useState } from "react"
+import { useTask } from "../hooks/useTask"
 
 const ThemeToggle = () => {
 
-  const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('theme') || 'light'
-  });
-
-  useEffect(() => {
-    document.documentElement.className = theme;
-    localStorage.setItem('theme', theme);
-  }, [theme]);
+  const { theme, setTheme } = useTask();
 
   return (
     <button

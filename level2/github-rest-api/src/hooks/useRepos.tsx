@@ -7,7 +7,7 @@ const useRepos = () => {
   const [repos, setRepos] = useState<RepoType[]>([]);
   const [loadingRepos, setLoadingRepos] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
-  
+
   const currentUrl = new URL(window.location.href);
   const usernameFromUrl = currentUrl.searchParams.get("username");
 
@@ -21,7 +21,9 @@ const useRepos = () => {
         // fetch user details
         const response = await fetch(`https://api.github.com/users/${usernameFromUrl}/repos`);
         const data = await response.json();
+        await new Promise((resolve) => setTimeout(resolve, 10000));
         setRepos(data);
+
 
       } catch (error) {
         console.error("Error fetching data:", error);

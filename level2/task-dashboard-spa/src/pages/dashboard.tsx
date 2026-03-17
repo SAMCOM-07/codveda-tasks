@@ -37,7 +37,7 @@ export default function DashboardPage() {
           <h3 className="font-semibold text-xl p-4 border-b border-border w-full">Task Overview</h3>
           <TaskPieChart />
 
-          <div className="flex gap-4 py-4 text-xs justify-evenly w-full">
+          <div className="flex gap-4 py-4 text-xs justify-evenly w-full items-center">
             <div className="flex items-center gap-1.5">
               <span className="block w-4 h-4 rounded-sm bg-green"></span>
               <span>Completed</span>
