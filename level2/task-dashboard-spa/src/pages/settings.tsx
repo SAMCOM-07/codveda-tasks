@@ -348,7 +348,7 @@ export default function SettingsPage() {
       </div>
 
       {/* Footer Note */}
-      <div className="bg-accent/10 border border-accent/20 rounded-lg p-4 text-sm text-accent">
+      <div className="bg-accent-foreground/10 border border-accent/20 rounded-lg p-4 text-sm text-blue-300 mb-14">
         <p>
           💡 All your settings and tasks are saved locally in your browser. Your
           data never leaves your device.
