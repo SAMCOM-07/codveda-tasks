@@ -9,7 +9,7 @@ const TasksTable = ({ filter, searchTerm }: { filter: string, searchTerm: string
   let filteredTasks = tasks;
   if (filter !== "all") {
     if (filter === "overdue") {
-      filteredTasks = tasks.filter(task => task.dueDate < new Date() && task.status !== 'completed');
+      filteredTasks = tasks.filter(task => new Date(task.dueDate) < new Date() && task.status !== 'completed');
     } else if (["low", "medium", "high"].includes(filter)) {
       filteredTasks = tasks.filter(task => task.priority === filter);
     } else {

@@ -65,7 +65,7 @@ const Products = () => {
 
   return (
     <PageTransition direction="left">
-      <section className="min-h-screen pt-24 pb-20 bg-gradient-to-br from-gray-50 to-gray-100">
+      <section className="min-h-screen pt-24 pb-20 bg-linear-to-br from-gray-50 to-gray-100">
         <div className="max-w-6xl mx-auto px-4">
           <ScrollReveal>
             <motion.div className="text-center mb-16">
@@ -95,12 +95,12 @@ const Products = () => {
                 <ScrollReveal>
                   <div className="relative h-72 rounded-lg overflow-hidden cursor-pointer">
                     <div
-                      className={`absolute inset-0 bg-gradient-to-br ${product.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                      className={`absolute inset-0 bg-linear-to-br ${product.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
                     />
 
                     <motion.div
                       whileHover={{ scale: 1.1 }}
-                      className="relative h-full flex flex-col items-center justify-center bg-white group-hover:bg-gradient-to-br"
+                      className="relative h-full flex flex-col items-center justify-center bg-white group-hover:bg-linear-to-br"
                     >
                       <motion.div
                         animate={{ y: [0, -10, 0] }}

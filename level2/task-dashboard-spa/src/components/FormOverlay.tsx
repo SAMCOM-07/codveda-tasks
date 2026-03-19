@@ -31,6 +31,8 @@ const FormOverlay = () => {
     };
   }, [setOpenFormOverlay, overlayRef, setEditDetails]);
 
+
+  // handle submit function for both creating and updating tasks
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -45,9 +47,10 @@ const FormOverlay = () => {
     if (!data.category) newErrors.category = "Category is required.";
     if (!data.dueDate) {
       newErrors.dueDate = "Due date is required.";
-    } else if (new Date(data.dueDate as string) < new Date()) {
-      newErrors.dueDate = "Due date must be in the future.";
-    }
+    } 
+    // else if (new Date(data.dueDate as string) < new Date()) {
+    //   newErrors.dueDate = "Due date must be in the future.";
+    // }
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);

@@ -84,7 +84,7 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="relative h-96 rounded-lg overflow-hidden bg-gradient-to-br from-blue-500 to-purple-600 p-8 flex flex-col justify-center items-center text-white text-center"
+              className="relative h-96 rounded-lg overflow-hidden bg-linear-to-br from-blue-500 to-purple-600 p-8 flex flex-col justify-center items-center text-white text-center"
             >
               <motion.div
                 animate={{
@@ -142,7 +142,7 @@ const About = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
-            className="mt-20 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-12 text-white text-center"
+            className="mt-20 bg-linear-to-r from-blue-600 to-purple-600 rounded-lg p-12 text-white text-center"
           >
             <h2 className="text-3xl font-bold mb-4">Ready to Create Magic?</h2>
             <p className="text-lg mb-8 opacity-90">

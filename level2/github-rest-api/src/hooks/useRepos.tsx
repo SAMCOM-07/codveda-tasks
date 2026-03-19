@@ -21,9 +21,7 @@ const useRepos = () => {
         // fetch user details
         const response = await fetch(`https://api.github.com/users/${usernameFromUrl}/repos`);
         const data = await response.json();
-        await new Promise((resolve) => setTimeout(resolve, 10000));
         setRepos(data);
-
 
       } catch (error) {
         console.error("Error fetching data:", error);
