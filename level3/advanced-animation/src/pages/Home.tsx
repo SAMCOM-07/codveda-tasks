@@ -32,7 +32,7 @@ const Home = () => {
 
   return (
     <PageTransition direction="right">
-      <section className="min-h-screen pt-20 bg-gradient-to-br from-white via-blue-50 to-purple-50 relative overflow-hidden">
+      <section className="min-h-screen pt-20 bg-linear-to-br from-white via-blue-50 to-purple-50 relative overflow-hidden">
         {/* Animated Background Elements */}
         <motion.div
           className="absolute top-20 right-10 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20"
@@ -69,7 +69,7 @@ const Home = () => {
           >
             <motion.h1
               variants={itemVariants}
-              className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent"
+              className="text-6xl md:text-7xl font-bold mb-6 bg-linear-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent"
             >
               Welcome to AnimaFlow
             </motion.h1>
@@ -88,7 +88,7 @@ const Home = () => {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link
                   to="/products"
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-shadow"
+                  className="bg-linear-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-shadow"
                 >
                   Explore Products
                 </Link>

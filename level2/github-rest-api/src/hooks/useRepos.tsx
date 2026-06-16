@@ -11,8 +11,7 @@ const useRepos = () => {
   const currentUrl = new URL(window.location.href);
   const usernameFromUrl = currentUrl.searchParams.get("username");
 
-
-
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
